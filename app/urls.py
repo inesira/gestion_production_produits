@@ -41,4 +41,13 @@ urlpatterns = [
     path('output/getPrix_Total', views.outputs.getPrix_Total, name='output_getPrix_Total'),
     path('output/getDate', views.outputs.getDate, name='output_getDate'),
     
+    path('mains_d_oeuvres/', views.main_d_oeuvres.index , name='mains_d_oeuvres'),
+    path('mains_d_oeuvres/create', views.main_d_oeuvres.create, name='mains_create'),
+    path('mains_d_oeuvres/store', views.main_d_oeuvres.store, name='mains_store'),
+    path('mains_d_oeuvres/edit/<int:id>', views.main_d_oeuvres.edit, name='mains_edit'),
+    path('mains_d_oeuvres/update/<int:id>', views.main_d_oeuvres.update, name='mains_update'),
+    path('mains_d_oeuvres/delete/<int:id>', views.main_d_oeuvres.delete, name='mains_delete'),
+    path('mains_d_oeuvres/getRevenu', views.main_d_oeuvres.getRevenu, name='mains_getRevenu'),
+  
+    
 ]
