@@ -6,6 +6,7 @@ from app.models import Category
 
 class Mains_d_oeuvres(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    nombre_ou_quantite = models.FloatField()
-    revenu = models.FloatField()
+    nombre = models.FloatField()
+    revenu = models.FloatField(null=True, blank=True)
+    total = models.FloatField(null=True, blank=True)
     date = models.DateField()
