@@ -49,5 +49,17 @@ urlpatterns = [
     path('mains_d_oeuvres/delete/<int:id>', views.main_d_oeuvres.delete, name='mains_delete'),
     path('mains_d_oeuvres/getRevenu', views.main_d_oeuvres.getRevenu, name='mains_getRevenu'),
   
+  
+  
+    path('situation_stock/', views.situation_stocks.index , name='situation_stock'),
+    path('situation_stock/create', views.situation_stocks.create, name='st_create'),
+    path('situation_stock/store', views.situation_stocks.store, name='st_store'),
+    path('situation_stock/edit/<int:id>', views.situation_stocks.edit, name='st_edit'),
+    path('situation_stock/update/<int:id>', views.situation_stocks.update, name='st_update'),
+    path('situation_stock/delete/<int:id>', views.situation_stocks.delete, name='st_delete'),
+    path('situation_stock/getStock_actuel', views.situation_stocks.getStock_actuel, name='st_getStock_actuel'),
+    path('situation_stock/getPrix_unitaire', views.situation_stocks.getPrix_unitaire, name='st_getPrix_unitaire'),
+    path('situation_stock/getPrixTotal', views.situation_stocks.getPrixTotal, name='st_getPrixTotal'),
+    path('situation_stock/getDat', views.situation_stocks.getDat, name='st_getDat'),
     
 ]
