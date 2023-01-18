@@ -1,0 +1,62 @@
+{% extends 'app/layouts/defaults.html' %}
+
+{% block content %}
+<main id="main" class="main">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Situation du Stock</h5>
+
+            <!-- Table with stripped rows -->
+            <div class="card-header py-3">
+                <a href="{% url 'st_create'%}" class="btn btn-primary">Nouvel Stock</a>
+            </div>
+            <div class="card-body">
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <i class="fas fa-alert mr-1"></i>{{message}}
+                </div>
+                {% endfor%}
+                {% endif %}
+                <table class="table table-striped datatable table-bordered">
+                    <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Matieres Premieres</th>
+                        <th scope="col">Quantite</th>
+                        <th scope="col">Prix unitaire</th>
+                        <th scope="col">Prix total</th>
+                        <th scope="col">Date</th>
+                        <th scope="col" colspan="2">Option</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {% for situation_stock in Situation_stocks %}
+                        <tr>
+                            <th scope="row"><a href="#">{{situation_stock.id}}</a></th>
+                            <td>{{situation_stock.stocks}}</td>
+                            <td>{{situation_stock.quantite}}</td>
+                            <td>{{situation_stock.price}}</td>
+                            <td>{{situation_stock.total }}</td>
+                            <td>{{situation_stock.date}}</td>
+                            
+                            <td>
+                                <a href="{% url 'st_edit' situation_stock.id %}" class="btn btn-primary"> Modifier </a>
+                            </td>
+                            <td>    
+                                <form action="{% url 'st_delete' situation_stock.id %}" method="POST">
+                                    {%csrf_token%}
+                                    <button type="submit" onclick="return confirm('Voulez-vous supprimer cette facture?')" class="btn btn-danger"> Supprimer</Button>
+                                </form>
+                            </td>
+                        </tr>
+                    {%  endfor %}
+                    </tbody>
+                </table>
+            </div>
+        <!-- End Table with stripped rows -->
+
+        </div>
+    </div>
+</main>
+{% endblock %}
