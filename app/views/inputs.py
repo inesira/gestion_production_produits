@@ -32,7 +32,7 @@ def store(request):
         form = InputForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request," Insertion des Entrees avec succes ")
+            messages.success(request," Entre des matieres premieres avec succes ")
         return redirect('/input')
 
 def edit(request, id):
@@ -67,8 +67,8 @@ def update(request, id):
 def delete(request, id):
     Inputs = Input.objects.get(pk=id)
     Inputs.delete()
-    messages.success(request," Suppression de la main d'oeuvre avec succes ")
-    return redirect('/mains_d_oeuvres')
+    messages.success(request," Suppression des Entrees avec succes ")
+    return redirect('/input')
 
 def getEntrees(request):
     id_stock = request.GET.get('id_stock')

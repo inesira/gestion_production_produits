@@ -30,4 +30,15 @@ urlpatterns = [
     path('input/getTotale', views.inputs.getTotale, name='input_getTotale'),
     path('input/getDate', views.inputs.getDate, name='input_getDate'),
     
+    path('output/', views.outputs.index , name='output'),
+    path('output/create', views.outputs.create, name='output_create'),
+    path('output/store', views.outputs.store, name='output_store'),
+    path('output/edit/<int:id>', views.outputs.edit, name='output_edit'),
+    path('output/update/<int:id>', views.outputs.update, name='output_update'),
+    path('output/delete/<int:id>', views.outputs.delete, name='output_delete'),
+    path('output/getSorties', views.outputs.getSorties, name='output_getSorties'),
+    path('output/getPrice', views.outputs.getPrice, name='output_getPrice'),
+    path('output/getPrix_Total', views.outputs.getPrix_Total, name='output_getPrix_Total'),
+    path('output/getDate', views.outputs.getDate, name='output_getDate'),
+    
 ]
