@@ -11,9 +11,14 @@
 
     <li class="nav-item">
       <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-        <i class="bi bi-menu-button-wide"></i><span>Stock</span><i class="bi bi-chevron-down ms-auto"></i>
+        <i class="bi bi-menu-button-wide"></i><span>Matieres Premieres</span><i class="bi bi-chevron-down ms-auto"></i>
       </a>
       <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="{% url 'stock'%}">
+            <i class="bi bi-circle"></i><span>Tous les Stocks</span>
+          </a>
+        </li>
         <li>
           <a href="{% url 'input'%}">
             <i class="bi bi-circle"></i><span>Entrees</span>
@@ -25,8 +30,8 @@
           </a>
         </li>
         <li>
-          <a href="{% url 'stock'%}">
-            <i class="bi bi-circle"></i><span>Stock</span>
+          <a href="{% url 'situation_stock'%}">
+            <i class="bi bi-circle"></i><span>Situation du Stock</span>
           </a>
         </li>
         
@@ -46,7 +51,7 @@
         </li>
         <li>
           <a href="{% url 'mains_d_oeuvres'%}">
-            <i class="bi bi-circle"></i><span>Main d'Oeuvre</span>
+            <i class="bi bi-circle"></i><span>Tous les Mains d'Oeuvres</span>
           </a>
         </li>
        
