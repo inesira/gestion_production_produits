@@ -26,6 +26,7 @@
                         <th scope="col">Nombre</th>
                         <th scope="col">Revenu unitaire</th>
                         <th scope="col">Revenu total</th>
+                        <th scope="col">Production</th>
                         <th scope="col">Date</th>
                         <th scope="col" colspan="2">Option</th>
                     </tr>
@@ -38,6 +39,7 @@
                             <td>{{mains_d_oeuvres.nombre}}</td>
                             <td>{{mains_d_oeuvres.revenu}}</td>
                             <td>{{mains_d_oeuvres.total }}</td>
+                            <td>{{mains_d_oeuvres.production }}</td>
                             <td>{{mains_d_oeuvres.date}}</td>
                             <td>
                                 <a href="{% url 'mains_edit' mains_d_oeuvres.id %}" class="btn btn-primary"> Modifier </a>
