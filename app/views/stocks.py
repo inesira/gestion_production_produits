@@ -62,7 +62,7 @@ def edit(request, id):
 def delete(request, id):
     Stocks = Stock.objects.get(pk=id)
     Stocks.delete()
-    messages.success(request," Suppression de la cathegorie avec succes ")
+    messages.success(request," Suppression du stock avec succes ")
     return redirect('/stock')
 
 def getStock_actuel(request):
