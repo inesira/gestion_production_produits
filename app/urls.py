@@ -62,4 +62,11 @@ urlpatterns = [
     path('situation_stock/getPrixTotal', views.situation_stocks.getPrixTotal, name='st_getPrixTotal'),
     path('situation_stock/getDat', views.situation_stocks.getDat, name='st_getDat'),
     
+    
+    path('production/', views.productions.index , name='production'),
+    path('production/create', views.productions.create, name='pro_create'),
+    path('production/store', views.productions.store, name='pro_store'),
+    path('production/edit/<int:id>', views.productions.edit, name='pro_edit'),
+    path('production/delete/<int:id>', views.productions.delete, name='pro_delete'),
+    
 ]

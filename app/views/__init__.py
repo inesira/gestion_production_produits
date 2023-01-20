@@ -5,3 +5,4 @@ from .inputs import *
 from .outputs import *
 from .main_d_oeuvres import *
 from .situation_stocks import *
+from .productions import *
