@@ -69,4 +69,16 @@ urlpatterns = [
     path('production/edit/<int:id>', views.productions.edit, name='pro_edit'),
     path('production/delete/<int:id>', views.productions.delete, name='pro_delete'),
     
+    path('depense/', views.depenses.index , name='depense'),
+    path('depense/create', views.depenses.create, name='dep_create'),
+    path('depense/store', views.depenses.store, name='dep_store'),
+    path('depense/edit/<int:id>', views.depenses.edit, name='dep_edit'),
+    path('depense/update/<int:id>', views.depenses.update, name='dep_update'),
+    path('depense/delete/<int:id>', views.depenses.delete, name='dep_delete'),
+    path('depense/getStocks', views.depenses.getStocks, name='dep_getStocks'),
+    path('depense/getTotal_sorties', views.depenses.getTotal_sorties, name='dep_getTotal_sorties'),
+    path('depense/getCategories', views.depenses.getCategories, name='dep_getCategories'),
+    path('depense/getTotal_m', views.depenses.getTotal_m, name='dep_getTotal_m'),
+    path('depense/getDate', views.depenses.getDate, name='dep_getDate'),
+    
 ]

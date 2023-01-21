@@ -5,29 +5,31 @@
     <div class="container col-8">
         <div class="card">            
             <div class="card-body">
-                <h5 class="card-title">Les Sorties</h5>
+                <h5 class="card-title">Les Depenses</h5>
                 <!-- Vertical Form -->
-                <form class="row g-3" action="{% url 'output_update' form.instance.pk %}" method="POST">
+                <form class="row g-3" action="{% url 'dep_update' form.instance.pk %}" method="POST">
                     {% csrf_token %}
                     <div class="form-group">
-                        {{ form.stock_id|as_crispy_field }}
+                        {{ form.type_depense|as_crispy_field }}
                     </div>
                     <div class="form-group">
-                        {{ form.quantite|as_crispy_field }}
+                        {{ form.production|as_crispy_field }}
                     </div>
                     <div class="form-group">
-                        {{ form.price|as_crispy_field }}
+                        {{ form.stocks|as_crispy_field }}
                     </div>
                     <div class="form-group">
-                        {{ form.total |as_crispy_field }}
+                        {{ form.cout_total_sorties|as_crispy_field }}
                     </div>
                     <div class="form-group">
-                        {{ form.production |as_crispy_field }}
+                        {{ form.categories|as_crispy_field }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.cout_total_m |as_crispy_field }}
                     </div>
                     <div class="form-group">
                         {{ form.date|as_crispy_field }}
                     </div>
-                    
                     <div class="text-center">
                         <button type="submit" class="btn btn-primary">Enregistrer</button>
                         <button type="reset" class="btn btn-secondary">reset</button>
