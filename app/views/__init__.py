@@ -7,3 +7,4 @@ from .main_d_oeuvres import *
 from .situation_stocks import *
 from .productions import *
 from .depenses import *
+from .products import *
