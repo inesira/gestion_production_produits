@@ -5,3 +5,4 @@ from .output_form import OutputForm
 from .main_d_oeuvre_form import Main_d_oeuvreForm
 from .situation_stock_form import Situation_stockForm
 from .production_form import ProductionForm
+from .depense_form import DepenseForm
