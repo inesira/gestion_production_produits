@@ -81,4 +81,10 @@ urlpatterns = [
     path('depense/getTotal_m', views.depenses.getTotal_m, name='dep_getTotal_m'),
     path('depense/getDate', views.depenses.getDate, name='dep_getDate'),
     
+    
+    path('product/', views.products.index , name='product'),
+    path('product/create', views.products.create, name='prod_create'),
+    path('product/store', views.products.store, name='prod_store'),
+    path('product/edit/<int:id>', views.products.edit, name='prod_edit'),
+    path('product/delete/<int:id>', views.products.delete, name='prod_delete'),
 ]
