@@ -1,0 +1,65 @@
+{% extends 'app/layouts/defaults.html' %}
+
+{% block content %}
+<main id="main" class="main">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Les Depenses</h5>
+
+            <!-- Table with stripped rows -->
+            <div class="card-header py-3">
+                <a href="{% url 'dep_create'%}" class="btn btn-primary">Nouvelles Depenses</a>
+            </div>
+            <div class="card-body">
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <i class="fas fa-alert mr-1"></i>{{message}}
+                </div>
+                {% endfor%}
+                {% endif %}
+                <table class="table table-striped datatable table-bordered">
+                    <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Depenses</th>
+                        <th scope="col">Production</th>
+                        <th scope="col">Nombre de Stocks</th>
+                        <th scope="col">Cout total des Sorties</th>
+                        <th scope="col">Nombre de Categories M.O</th>
+                        <th scope="col">cout total de Mains d'oeuvres</th>
+                        <th scope="col">Date</th>
+                        <th scope="col" colspan="2">Option</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {% for depense in Depenses %}
+                        <tr>
+                            <th scope="row"><a href="#">{{depense.id}}</a></th>
+                            <td>{{depense.type_depense}}</td>
+                            <td>{{depense.production}}</td>
+                            <td>{{depense.stocks}}</td>
+                            <td>{{depense.cout_total_sorties}}</td>
+                            <td>{{depense.categories}}</td>
+                            <td>{{depense.cout_total_m }}</td>
+                            <td>{{depense.date}}</td>
+                            <td>
+                                <a href="{% url 'dep_edit' depense.id %}" class="btn btn-primary"> Modifier </a>
+                            </td>
+                            <td>    
+                                <form action="{% url 'dep_delete' depense.id %}" method="POST">
+                                    {%csrf_token%}
+                                    <button type="submit" onclick="return confirm('Voulez-vous supprimer cette facture?')" class="btn btn-danger"> Supprimer</Button>
+                                </form>
+                            </td>
+                        </tr>
+                    {%  endfor %}
+                    </tbody>
+                </table>
+            </div>
+        <!-- End Table with stripped rows -->
+
+        </div>
+    </div>
+</main>
+{% endblock %}
