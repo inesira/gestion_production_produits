@@ -87,4 +87,18 @@ urlpatterns = [
     path('product/store', views.products.store, name='prod_store'),
     path('product/edit/<int:id>', views.products.edit, name='prod_edit'),
     path('product/delete/<int:id>', views.products.delete, name='prod_delete'),
+    
+    
+    path('cout_production/', views.cout_productions.index , name='cout_production'),
+    path('cout_production/create', views.cout_productions.create, name='cout_create'),
+    path('cout_production/store', views.cout_productions.store, name='cout_store'),
+    path('cout_production/edit/<int:id>', views.cout_productions.edit, name='cout_edit'),
+    path('cout_production/update/<int:id>', views.cout_productions.update, name='cout_update'),
+    path('cout_production/delete/<int:id>', views.cout_productions.delete, name='cout_delete'),
+    path('cout_production/getProduct', views.cout_productions.getProduct, name='cout_getProduct'),
+    path('cout_production/getDepense', views.cout_productions.getDepense, name='cout_getDepense'),
+    path('cout_production/getDate', views.cout_productions.getDate, name='cout_getDate'),
+    path('cout_production/getUnite', views.cout_productions.getUnite, name='cout_getUnite'),
+    
+    
 ]

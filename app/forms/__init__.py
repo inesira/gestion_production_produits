@@ -7,3 +7,4 @@ from .situation_stock_form import Situation_stockForm
 from .production_form import ProductionForm
 from .depense_form import DepenseForm
 from .product_form import ProductForm
+from .cout_production_form import Cout_productionForm
