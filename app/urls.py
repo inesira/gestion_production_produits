@@ -4,7 +4,8 @@ from . import views
 
 urlpatterns = [
     #path('admin/', admin.site.urls),
-    path('', views.home.index, name='home'),
+    path('', views.users.user_login, name='home'),
+    path('home/', views.home.index, name='home'),
     
     path('category/', views.categories.index , name='category'),
     path('category/create', views.categories.create, name='categorie_create'),
@@ -100,5 +101,12 @@ urlpatterns = [
     path('cout_production/getDate', views.cout_productions.getDate, name='cout_getDate'),
     path('cout_production/getUnite', views.cout_productions.getUnite, name='cout_getUnite'),
     
+    
+    path('user/<int:id>', views.users.index, name='user'),
+    path('user/create', views.users.register, name='user_create'),
+    path('user/edit/<int:id>', views.users.edit, name='user_edit'),
+    path('user/update/<int:id>', views.users.update, name='user_update'),
+    path('user/store', views.users.store, name='user_store'),
+    path('user/logout/', views.users.user_logout, name='user_logout'),
     
 ]
