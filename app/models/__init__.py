@@ -8,4 +8,5 @@ from .situation_stock import Situation_stock
 from .depense import Depense
 from .product import Product
 from .cout_production import Cout_production
+from .user import User
 
