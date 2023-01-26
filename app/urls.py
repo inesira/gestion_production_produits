@@ -4,8 +4,10 @@ from . import views
 
 urlpatterns = [
     #path('admin/', admin.site.urls),
-    path('', views.users.user_login, name='home'),
-    path('home/', views.home.index, name='home'),
+    path('login/', views.users.user_login, name='home'),
+    path('', views.home.index, name='home'),
+   
+    
     
     path('category/', views.categories.index , name='category'),
     path('category/create', views.categories.create, name='categorie_create'),
@@ -91,6 +93,7 @@ urlpatterns = [
     
     
     path('cout_production/', views.cout_productions.index , name='cout_production'),
+    path('cout_production_admin/', views.cout_production_admin.index, name='cout_production_admin'),
     path('cout_production/create', views.cout_productions.create, name='cout_create'),
     path('cout_production/store', views.cout_productions.store, name='cout_store'),
     path('cout_production/edit/<int:id>', views.cout_productions.edit, name='cout_edit'),
@@ -102,11 +105,45 @@ urlpatterns = [
     path('cout_production/getUnite', views.cout_productions.getUnite, name='cout_getUnite'),
     
     
+    
     path('user/<int:id>', views.users.index, name='user'),
+    path('user_resp/<int:id>', views.users.index_resp, name='user_resp'),
+    path('user_gest/<int:id>', views.users.index_gest, name='user_gest'),
+    path('user/all', views.users.index_all, name='user_all'),
     path('user/create', views.users.register, name='user_create'),
     path('user/edit/<int:id>', views.users.edit, name='user_edit'),
     path('user/update/<int:id>', views.users.update, name='user_update'),
+     path('user/delete/<int:id>', views.users.delete, name='user_delete'),
     path('user/store', views.users.store, name='user_store'),
     path('user/logout/', views.users.user_logout, name='user_logout'),
+     path('error/resp', views.users.error_resp, name='error_resp'),
+    path('error/gest', views.users.error_gest, name='error_gest'),
+    path('error/admin', views.users.error_admin, name='error_admin'),
+    path('user/edit_resp/<int:id>', views.users.edit_resp, name='user_edit_resp'),
+    path('user/edit_gest/<int:id>', views.users.edit_gest, name='user_edit_gest'),
+    path('user/edit_admin/<int:id>', views.users.edit_admin, name='user_edit_admin'),
+    path('user/update_resp/<int:id>', views.users.update_resp, name='user_update_resp'),
+    path('user/update_gest/<int:id>', views.users.update_gest, name='user_update_gest'),
+    path('user/update_admin/<int:id>', views.users.update_admin, name='user_update_admin'),
+    path('user/edit_gest_pass/<int:id>', views.users.edit_gest_pass, name='user_edit_gest_pass'),
+    path('user/edit_resp_pass/<int:id>', views.users.edit_resp_pass, name='user_edit_resp_pass'),
+    path('user/edit_admin_pass/<int:id>', views.users.edit_admin_pass, name='user_edit_admin_pass'),
+    
+    
+    path('home_resp/', views.home_resp.index, name='home_resp'),
+    path('home_gest/', views.home_gest.index, name='home_gest'),
+    
+    # views pour l'admin
+    path('stock_admin/', views.stock_admin.index, name='Stock_admin'),
+    path('input/<int:id>', views.input_admin.index, name='input_admin'),
+    path('output/<int:id>', views.output_admin.index, name='output_admin'),
+    path('situation_stock/<int:id>', views.situation_stock_admin.index, name='situation_stock_admin'),
+    path('category_admin', views.categories_resp.index, name='category_admin'),
+    path('mains_d_oeuvres/<int:id>', views.main_d_oeuvres_admin.index, name='mains_d_oeuvres_admin'),
+    path('production/<int:id>', views.production_admin.index, name='production_admin'),
+    path('product/<int:id>', views.product_admin.index, name='product_admin'),
+    path('depense/<int:id>', views.depense_admin.index, name='depense_admin'),
+    
+    
     
 ]
