@@ -1,14 +1,14 @@
-{% extends 'app/layouts/defaults_resp.html' %}
+{% extends 'app/layouts/defaults.html' %}
 
 {% block content %}
 <main id="main" class="main">
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title">Produits Finis</h5>
+            <h5 class="card-title">Production</h5>
 
             <!-- Table with stripped rows -->
             <div class="card-header py-3">
-                <a href="{% url 'prod_create'%}" class="btn btn-primary">Nouveau Produit</a>
+                {% comment %} <a href="{% url 'pro_create'%}" class="btn btn-primary">Nouvelle Production</a> {% endcomment %}
             </div>
             <div class="card-body">
                 {% if messages %}
@@ -22,32 +22,30 @@
                     <thead>
                     <tr>
                         <th scope="col">id</th>
-                        <th scope="col">Produits Finis</th>
-                        <th scope="col">Quantite Produite</th>
+                        <th scope="col">Produit</th>
                         <th scope="col">Unite de Production</th>
-                        <th scope="col">date de Production</th>
-                        <th scope="col" colspan="2">Option</th>
+                        <th scope="col">Date</th>
+                        {% comment %} <th scope="col" colspan="2" >Option</th> {% endcomment %}
                     </tr>
                     </thead>
                     <tbody>
-                        {% for product in Products %}
+                        {% for production in Productions %}
                         <tr>
-                            <td>{{product.id}}</td>
-                            <td>{{ product.produit}}</td>
-                            <td>{{ product.quantite}}</td>
-                            <td>{{ product.unite_production}}</td>
-                            <td>{{ product.date}}</td>
-                            <td>
-                                <a href="{% url 'prod_edit' product.id %}" class="btn btn-primary"> Modifier </a>
+                            <th scope="row"><a href="#">{{production.id}}</a></th>
+                            <td>{{production.nom_prod}}</td>
+                            <td>{{production.unite_production}}</td>
+                            <td>{{production.date}}</td>
+                            {% comment %} <td>
+                                <a href="{% url 'pro_edit' production.id %}" class="btn btn-primary"> Modifier </a>
                             </td>
                             <td>    
-                                <form action="{% url 'prod_delete' product.id %}" method="POST">
+                                <form action="{% url 'pro_delete' production.id %}" method="POST">
                                     {%csrf_token%}
-                                    <button type="submit" onclick="return confirm('Voulez-vous supprimer cet produit?')" class="btn btn-danger"> Supprimer</Button>
+                                    <button type="submit" onclick="return confirm('Voulez-vous supprimer cette facture?')" class="btn btn-danger"> Supprimer</Button>
                                 </form>
-                            </td>
+                            </td> {% endcomment %}
                         </tr>
-                        {%  endfor %}
+                    {%  endfor %}
                     </tbody>
                 </table>
             </div>
