@@ -1,0 +1,75 @@
+{% extends 'app/layouts/defaults_gest.html' %}
+
+{% block content%}
+<main id="main" class="main">
+  {% load static %}
+    <div class="pagetitle">
+      <h1 style="text-align: center">BIENVENUE DANS NOTRE ENTREPRISE DE PRODUCTION COTE GESTIONNAIRE </h1>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+        <div class="col-lg-12">
+          <div class="row">
+
+            <!-- Engineers Card -->
+            <div class="col-xxl-4 col-md-4">
+              <div class="card info-card sales-card">
+                <div class="card-body">
+                  <h5 class="card-title">MP Entrees</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-people bi bi-cart"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>Stocks</h6>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- End Engineers Card -->
+
+            <!-- Service Card -->
+            <div class="col-xxl-4 col-md-4">
+              <div class="card info-card revenue-card">
+                <div class="card-body">
+                  <h5 class="card-title">MP Sorties</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-cart" aria-hidden="true"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>Stocks</h6>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- End Service Card -->
+
+            <!-- Customers Card -->
+            <div class="col-xxl-4 col-xl-4">
+              <div class="card info-card customers-card">
+                <div class="card-body">
+                  <h5 class="card-title">Situation du Stock</h5>
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-people"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>Stock</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Customers Card -->
+            <div class="row">
+            </div> 
+          </div>
+        </div>
+    </section>
+
+  </main>
+{% endblock %}
