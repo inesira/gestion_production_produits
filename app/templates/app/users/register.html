@@ -48,11 +48,11 @@
                 <div class="d-flex justify-content-center py-4">
                     <a href="index.html" class="logo d-flex align-items-center w-auto">
                     <img src="{% static 'app/img/logo.png' %}" alt="">
-                    <span class="d-none d-lg-block">Welcome</span>
+                    <span class="d-none d-lg-block">Bienvenue</span>
                     </a>
                 </div><!-- End Logo -->
                 <div class="card-body">
-                    <h5 class="card-title">User</h5>
+                    <h5 class="card-title">Utulisateur</h5>
                     <!-- Vertical Form -->
                     <form class="row g-3" action="{% url 'user_store'%}" method="POST">
                         {% csrf_token %}
