@@ -9,3 +9,6 @@ from .depense_form import DepenseForm
 from .product_form import ProductForm
 from .cout_production_form import Cout_productionForm
 from .user_form import UserForm
+from .user_form_edit import UserFormEdit
+from .user_form_edit_pass import UserFormEditPass
+from .user_form_edit_info import UserFormEdit_info

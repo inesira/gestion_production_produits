@@ -3,6 +3,13 @@ from django.http import HttpRequest
 from app.models import Depense,Production,Output,Mains_d_oeuvres
 from app.forms import DepenseForm,ProductionForm
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required,user_passes_test
+
+# Create your views here.
+@login_required( login_url="/login")
+@user_passes_test(lambda user: user.is_staff ,login_url="/error/gest")
+@user_passes_test(lambda user: not(user.is_superuser) ,login_url="/error/admin")
+
 
 def index(request):
     assert isinstance(request, HttpRequest)

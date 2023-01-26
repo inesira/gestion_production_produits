@@ -9,24 +9,14 @@
                 <!-- Vertical Form -->
                 <form class="row g-3" action="{% url 'user_update' form.instance.pk %}" method="POST">
                     {% csrf_token %}
-                    <div class="form-group">
-                        {{ form.first_name|as_crispy_field }}
-                    </div>
-                    <div class="form-group">
-                        {{ form.last_name|as_crispy_field }}
-                    </div>
-                    <div class="form-group">
-                        {{ form.email|as_crispy_field }}
-                    </div>
-                    <div class="form-group">
-                        {{ form.username|as_crispy_field }}
-                    </div>
-                    <div class="form-group">
-                        {{ form.password1|as_crispy_field }}
-                    </div>
-                    <div class="form-group">
-                        {{ form.password2|as_crispy_field }}
-                    </div>
+                    <label>Caucher cette case si c'est un administrateur</label>
+                        <div class="form-group">
+                            {{ form.is_superuser|as_crispy_field }}
+                        </div>
+                        <label>Caucher cette case si c'est un caissier ou laisser si c'est un receptionniste</label>
+                        <div class="form-group">
+                            {{ form.is_staff|as_crispy_field }}
+                        </div>
                     <div class="text-center">
                         <button type="submit" class="btn btn-primary">Enregistrer</button>
                     </div>
