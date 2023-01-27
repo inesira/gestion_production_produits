@@ -48,20 +48,20 @@
                 <div class="d-flex justify-content-center py-4">
                     <a href="index.html" class="logo d-flex align-items-center w-auto">
                     <img src="{% static 'app/img/logo.png' %}" alt="">
-                    <span class="d-none d-lg-block">NIYO GARAGE</span>
+                    <span class="d-none d-lg-block">PRODUCTION</span>
                     </a>
                 </div><!-- End Logo -->
                 <div class="card-body">
-                    <h5 class="card-title">User</h5>
+                    <h5 class="card-title">Utilisateur</h5>
                     <!-- Vertical Form -->
-                    <form class="row g-3" action="{% url 'user_update_user' form.instance.pk %}" method="POST">
+                    <form class="row g-3" action="{% url 'user_update' form.instance.pk %}" method="POST">
                         {% csrf_token %}
                         
                         <label>Caucher cette case si c'est un administrateur</label>
                         <div class="form-group">
                             {{ form.is_superuser|as_crispy_field }}
                         </div>
-                        <label>Caucher cette case si c'est un caissier ou laisser si c'est un receptionniste</label>
+                        <label>Caucher cette case si c'est un responsable ou laisser si c'est un gestionnaire</label>
                         <div class="form-group">
                             {{ form.is_staff|as_crispy_field }}
                         </div>
