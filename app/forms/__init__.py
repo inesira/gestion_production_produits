@@ -11,4 +11,4 @@ from .cout_production_form import Cout_productionForm
 from .user_form import UserForm
 from .user_form_edit import UserFormEdit
 from .user_form_edit_pass import UserFormEditPass
-from .user_form_edit_info import UserFormEdit_info
+from .user_form_edit_info import UserFormEdit_inf
