@@ -12,3 +12,6 @@ class UserForm(UserCreationForm):
             'password1',
             'password2'
         ]
+def __str__(self):
+        return self.username
+            

@@ -1,7 +1,12 @@
-from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth.forms import UserChangeForm
 from django.contrib.auth.models import User
 
-class UserFormEdit_info(PasswordChangeForm):
+class UserFormEdit_inf(UserChangeForm):
     class Meta:
         model = User
-        fields = '__all__'
+        fields = [
+            'first_name',
+            'last_name',
+            'email',
+            'username',
+        ]
