@@ -11,7 +11,7 @@
         <div class="col-lg-12">
           <div class="row">
 
-            <!-- Engineers Card -->
+            <!-- Productions Card -->
             <div class="col-xxl-4 col-md-4">
               <div class="card info-card sales-card">
                 <div class="card-body">
@@ -22,15 +22,15 @@
                       <i class="bi bi-cart"></i>
                     </div>
                     <div class="ps-3">
-                      <h6>Nombre</h6>
+                      <h6>{{count_production}}production(s)</h6>
                     </div>
                   </div>
                 </div>
 
               </div>
-            </div><!-- End Engineers Card -->
+            </div><!-- End Productions Card -->
 
-            <!-- Service Card -->
+            <!-- Products Card -->
             <div class="col-xxl-4 col-md-4">
               <div class="card info-card revenue-card">
                 <div class="card-body">
@@ -41,35 +41,80 @@
                       <i class="bi bi-cart" aria-hidden="true"></i>
                     </div>
                     <div class="ps-3">
-                      <h6>Stocks</h6>
+                      <h6>{{count_product}} stock(s)</h6>
                     </div>
                   </div>
                 </div>
 
               </div>
-            </div><!-- End Service Card -->
+            </div><!-- End Products Card -->
 
-            <!-- Customers Card -->
+            <!-- Depenses Card -->
             <div class="col-xxl-4 col-xl-4">
               <div class="card info-card customers-card">
                 <div class="card-body">
                   <h5 class="card-title">Depenses</h5>
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-people"></i>
+                      <i class="bi bi-cart"></i>
                     </div>
                     <div class="ps-3">
-                      <h6>categories</h6>
+                      <h6>{{count_depenses}}categorie(s)</h6>
                     </div>
                   </div>
                 </div>
               </div>
-            </div><!-- End Customers Card -->
+            </div><!-- End Depenses Card -->
             <div class="row">
             </div> 
           </div>
         </div>
     </section>
+    <div class="card">
+      <div class="card-body">
+          <h5 class="card-title">Cout de Production</h5>
+  
+          <!-- Table with stripped rows -->
+          <div class="card-body">
+            <table class="table table-striped datatable table-bordered">
+              <thead>
+              <tr>
+                  <th scope="col">id</th>
+                  <th scope="col">Produits Finis</th>
+                  <th scope="col">Quantite</th>
+                  <th scope="col">Unite de Production</th>
+                  <th scope="col">Depenses</th>
+                  <th scope="col">Cout total de Production</th>
+                  <th scope="col">Quantite Total</th>
+                  <th scope="col">Cout Unitaire de Production</th>
+                  <th scope="col">Date de production</th>
+                  
+              </tr>
+              </thead>
+              <tbody>
+                  {% for cout_production in Cout_productions %}
+                  <tr>
+                      <th scope="row"><a href="#">{{cout_production.id}}</a></th>
+                      <td>{{cout_production.Product}}</td>
+                      <td>{{cout_production.quantite}}</td>
+                      <td>{{cout_production.unite}}</td>
+                      <td>{{cout_production.depense}}</td>
+                      <td>{{cout_production.cout_total_pro }}</td>
+                      <td>{{cout_production.quantite_total}}</td>
+                      <td>{{cout_production.cout_de_production}}</td>
+                      <td>{{cout_production.date}}</td>
+                      <td>
+                  </tr>
+                  {%  endfor %}
+                  </tbody>
+              </table>
+          </div>
+        <!-- End Table with stripped rows -->
+  
+      </div>
+    </div>
+   
+  
 
   </main>
 {% endblock %}
