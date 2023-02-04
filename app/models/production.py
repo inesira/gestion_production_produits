@@ -1,19 +1,15 @@
 from django.db import models
-from app.models import Stock
-from app.models import Category
-
-
+from app.models import Product
 
 class Production(models.Model):
     
-    produit_finis = models.CharField(max_length=100)
-    quantite_produite = models.FloatField()
-    unite_production = models.FloatField()
-    stock = models.ForeignKey(Stock, on_delete=models.CASCADE)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    cout_production = models.FloatField()
-   
-    date = models.DateField()
+    produit_fini = models.ForeignKey(Product, on_delete=models.CASCADE, null=True, blank=True)
+    quantite_produite = models.FloatField(null=True, blank=True)
+    unite_production = models.CharField(max_length=100, null=True, blank=True)
+    date_production = models.DateField(null=True, blank=True)
+    utilisateur = models.CharField(max_length=150, null=True, blank=True)
+    cout_production =models.FloatField(null=True, blank=True)
+    
     
     def __str__(self):
-        return self.produit_finis + "" + self.cout_production
+        return self.produit_fini

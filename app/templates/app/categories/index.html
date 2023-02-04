@@ -1,0 +1,55 @@
+{% extends 'app/layouts/defaults.html' %}
+
+{% block content %}
+<main id="main" class="main">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Categorie</h5>
+
+            <!-- Table with stripped rows -->
+            <div class="card-header py-3">
+                <a href="{% url 'categorie_create'%}" class="btn btn-primary">Nouvelle Categorie</a>
+            </div>
+            <div class="card-body">
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <i class="fas fa-alert mr-1"></i>{{message}}
+                </div>
+                {% endfor%}
+                {% endif %}
+                <table class="table table-striped datatable table-bordered">
+                    <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Categorie</th>
+                        <th scope="col">Revenu</th>
+                        <th scope="col" colspan="2">Option</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {% for category in Categories %}
+                        <tr>
+                            <td>{{category.id}}</td>
+                            <td>{{ category.nom_categorie}}</td>
+                            <td>{{ category.revenu}}</td>
+                            <td>
+                                <a href="{% url 'categorie_edit' category.id %}" class="btn btn-primary"> Modifier </a>
+                            </td>
+                            <td>    
+                                <form action="{% url 'categorie_delete' category.id %}" method="POST">
+                                    {%csrf_token%}
+                                    <button type="submit" onclick="return confirm('Voulez-vous supprimer cette categorie?')" class="btn btn-danger"> Supprimer</Button>
+                                </form>
+                            </td>
+                        </tr>
+                        {%  endfor %}
+                    </tbody>
+                </table>
+            </div>
+        <!-- End Table with stripped rows -->
+
+        </div>
+    </div>
+</main>
+{% endblock %}

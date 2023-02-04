@@ -1,0 +1,49 @@
+{% extends 'app/layouts/defaults_gest.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+<main id="main" class="main">
+    <div class="container col-8">
+        <div class="card">            
+            <div class="card-body">
+                <h5 class="card-title">Les Sorties</h5>
+                <!-- Vertical Form -->
+                <form class="row g-3" action="{% url 'output_store'%}" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        {{ form.matiere_premiere|as_crispy_field }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.quantite_stock|as_crispy_field }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.quantite_sortie|as_crispy_field }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.unite_sortie |as_crispy_field }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.priX_unitaire_sortie |as_crispy_field }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.prix_total_sortie |as_crispy_field }}
+                    </div>
+                    {% comment %} <div class="form-group">
+                        {{ form.production |as_crispy_field }}
+                    </div> {% endcomment %}
+                    <div class="form-group">
+                        {{ form.date_sortie|as_crispy_field }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.utilisateur|as_crispy_field }}
+                    </div>
+                   
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Enregistrer</button>
+                        <button type="reset" class="btn btn-secondary">reset</button>
+                    </div>
+                </form><!-- Vertical Form -->
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

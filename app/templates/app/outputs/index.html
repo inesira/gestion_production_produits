@@ -1,0 +1,68 @@
+{% extends 'app/layouts/defaults_gest.html' %}
+
+{% block content %}
+<main id="main" class="main">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Les Sorties</h5>
+
+            <!-- Table with stripped rows -->
+            <div class="card-header py-3">
+                <a href="{% url 'output_create'%}" class="btn btn-primary">Nouveaux Sorties</a>
+            </div>
+            <div class="card-body">
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <i class="fas fa-alert mr-1"></i>{{message}}
+                </div>
+                {% endfor%}
+                {% endif %}
+                <table class="table table-striped datatable table-bordered">
+                    <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Matieres Premieres</th>
+                        <th scope="col">Quantite en stock</th>
+                        <th scope="col">Sortie en stock</th>
+                        <th scope="col">Prix unitaire</th>
+                        <th scope="col">Prix total</th>
+                        {% comment %} <th scope="col">Production</th> {% endcomment %}
+                        <th scope="col">Date de sortie</th>
+                        <th scope="col">Utilisateur</th>
+                        <th scope="col" colspan="2">Option</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {% for output in Outputs %}
+                        <tr>
+                            <th scope="row"><a href="#">{{output.id}}</a></th>
+                            <td>{{output.matiere_premiere}}</td>
+                            <td>{{output.quantite_stock}}</td>
+                            <td>{{output.quantite_sortie}}</td>
+                            <td>{{output.priX_unitaire_sortie}}</td>
+                            <td>{{output.prix_total_sortie }}</td>
+                            {% comment %} <td>{{output.production }}</td> {% endcomment %}
+                            <td>{{output.date_sortie}}</td>
+                            <td>{{output.utilisateur}}</td>
+                            
+                            <td>
+                                <a href="{% url 'output_edit' output.id %}" class="btn btn-primary"> Modifier </a>
+                            </td>
+                            <td>    
+                                <form action="{% url 'output_delete' output.id %}" method="POST">
+                                    {%csrf_token%}
+                                    <button type="submit" onclick="return confirm('Voulez-vous supprimer cette sortie?')" class="btn btn-danger"> Supprimer</Button>
+                                </form>
+                            </td>
+                        </tr>
+                    {%  endfor %}
+                    </tbody>
+                </table>
+            </div>
+        <!-- End Table with stripped rows -->
+
+        </div>
+    </div>
+</main>
+{% endblock %}

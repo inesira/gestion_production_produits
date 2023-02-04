@@ -12,4 +12,4 @@ class Stock(models.Model):
     date = models.DateField()
     
     def __str__(self):
-        return self.stock_actuel
+        return self.matieres_premieres

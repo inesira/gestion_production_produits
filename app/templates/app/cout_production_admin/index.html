@@ -1,0 +1,67 @@
+{% extends 'app/layouts/defaults.html' %}
+
+{% block content %}
+<main id="main" class="main">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Calcule du Cout de Production</h5>
+
+            <!-- Table with stripped rows -->
+            {% comment %} <div class="card-header py-3">
+                <a href="{% url 'cout_create'%}" class="btn btn-primary">Nouvel cout</a>
+            </div> {% endcomment %}
+            <div class="card-body">
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <i class="fas fa-alert mr-1"></i>{{message}}
+                </div>
+                {% endfor%}
+                {% endif %}
+                <table class="table table-striped datatable table-bordered">
+                    <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Produits Finis</th>
+                        <th scope="col">Quantite</th>
+                        <th scope="col">Unite de Production</th>
+                        <th scope="col">Depenses</th>
+                        <th scope="col">Cout total de Production</th>
+                        <th scope="col">Quantite Total</th>
+                        <th scope="col">Cout Unitaire de Production</th>
+                        <th scope="col">Date</th>
+                        {% comment %} <th scope="col" colspan="2">Option</th> {% endcomment %}
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {% for cout_production in Cout_productions %}
+                        <tr>
+                            <th scope="row"><a href="#">{{cout_production.id}}</a></th>
+                            <td>{{cout_production.Product}}</td>
+                            <td>{{cout_production.quantite}}</td>
+                            <td>{{cout_production.unite}}</td>
+                            <td>{{cout_production.depense}}</td>
+                            <td>{{cout_production.cout_total_pro }}</td>
+                            <td>{{cout_production.quantite_total}}</td>
+                            <td>{{cout_production.cout_de_production}}</td>
+                            <td>{{cout_production.date}}</td>
+                            {% comment %} <td>
+                                <a href="{% url 'cout_edit' cout_production.id %}" class="btn btn-primary"> Modifier </a>
+                            </td>
+                            <td>    
+                                <form action="{% url 'cout_delete' cout_production.id %}" method="POST">
+                                    {%csrf_token%}
+                                    <button type="submit" onclick="return confirm('Voulez-vous supprimer cette facture?')" class="btn btn-danger"> Supprimer</Button>
+                                </form>
+                            </td> {% endcomment %}
+                        </tr>
+                    {%  endfor %}
+                    </tbody>
+                </table>
+            </div>
+        <!-- End Table with stripped rows -->
+
+        </div>
+    </div>
+</main>
+{% endblock %}
