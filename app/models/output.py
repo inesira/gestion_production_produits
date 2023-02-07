@@ -10,5 +10,9 @@ class Output(models.Model):
     unite_sortie = models.CharField(max_length=45, null=True, blank=True)
     priX_unitaire_sortie = models.FloatField(null=True, blank=True)
     prix_total_sortie = models.FloatField(null=True, blank=True)
+    date_entree = models.DateField(null=True, blank=True)
     date_sortie = models.DateField(null=True, blank=True)
     utilisateur = models.CharField(max_length=45, blank=True, null=True)
+    
+    def __str__(self):
+        return self.matiere_premiere.matiere_Premiere.matiere_premiere
