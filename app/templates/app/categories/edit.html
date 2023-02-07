@@ -10,10 +10,7 @@
                 <form class="row g-3" action="" method="POST">
                     {% csrf_token %}
                     <div class="form-group">
-                        {{ form.nom_categorie|as_crispy_field }}
-                    </div>
-                    <div class="form-group">
-                        {{ form.revenu|as_crispy_field }}
+                        {{ form.type_depense|as_crispy_field }}
                     </div>
                     <div class="text-center">
                         <button type="submit" class="btn btn-primary">Enregistrer</button>
