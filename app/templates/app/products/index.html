@@ -23,9 +23,6 @@
                     <tr>
                         <th scope="col">id</th>
                         <th scope="col">Produits Finis</th>
-                        <th scope="col">Quantite Produite</th>
-                        <th scope="col">Unite de Production</th>
-                        <th scope="col">date de Production</th>
                         <th scope="col" colspan="2">Option</th>
                     </tr>
                     </thead>
@@ -33,10 +30,7 @@
                         {% for product in Products %}
                         <tr>
                             <td>{{product.id}}</td>
-                            <td>{{ product.produit}}</td>
-                            <td>{{ product.quantite}}</td>
-                            <td>{{ product.unite_production}}</td>
-                            <td>{{ product.date}}</td>
+                            <td>{{ product.type_produit}}</td>
                             <td>
                                 <a href="{% url 'prod_edit' product.id %}" class="btn btn-primary"> Modifier </a>
                             </td>
