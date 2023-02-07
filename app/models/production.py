@@ -12,4 +12,4 @@ class Production(models.Model):
     
     
     def __str__(self):
-        return self.produit_fini
+        return self.produit_fini.type_produit
