@@ -39,10 +39,9 @@
                             <td>{{production.quantite_produite}}</td>
                             <td>{{production.unite_production}}</td>
                             <td>{{production.date_production}}</td>
-                            {% comment %} <td>{{production.utilisateur}}</td> {% endcomment %}
-                            {% comment %} <td>{{production.cout_production}}</td> {% endcomment %}
+                            <td>{{production.utilisateur}}</td>
                             <td>
-                                <a href="{% url 'pro_edit' production.id %}" class="btn btn-primary"> modifier </a>
+                                <a href="{% url 'pro_edit' production.id %}" class="btn btn-primary"> Modifier </a>
                             </td>
                             <td>    
                                 <form action="{% url 'pro_delete' production.id %}" method="POST">
