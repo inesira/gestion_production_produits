@@ -157,14 +157,14 @@ def getCoutDepense(request):
     )    
 
 def getTotal(request):
-    id_production= request.GET.get('id_production')
-    couts = Cout.objects.filter(production_id = id_production)
-    cout_total_production = 0
-    for cout in couts:
-      cout_total_production= cout.cout_total_sortie + cout.cout_total_depense
+    id_production = request.GET.get('id_production')
+    
+    prix_total_sortie = float(list(Output.objects.filter(production_id =id_production).values('prix_total_sortie'))[0]['prix_total_sortie'])
+    prix_total_depense = float(list(Depense.objects.filter(production_id = id_production).values('Prix_total_depense'))[0]['Prix_total_depense'])
+    cout_total_production = prix_total_depense + prix_total_sortie
     return render(
         request,
-        'app/cout_productions/getDepense.html',
+        'app/couts/getTotal.html',
         {
             'cout_total_production': cout_total_production
             
@@ -174,10 +174,12 @@ def getTotal(request):
     
 # def getCoutProduction(request):
 #     id_production = request.GET.get('id_production')
-#     total_production = int(list(Cout.objects.filter(production_id = id_production).values('cout_total_production'))[0]['cout_total_production'])
-#     quantite_produite = int(list(Cout.objects.filter(production_id = id_production).values('quantite_produite'))[0]['quantite_produite'])
-    
-#     quotient = total_production / quantite_produite
+#     prix_total_sortie = float(list(Output.objects.filter(production_id =id_production).values('prix_total_sortie'))[0]['prix_total_sortie'])
+#     prix_total_depense = float(list(Depense.objects.filter(production_id = id_production).values('Prix_total_depense'))[0]['Prix_total_depense'])
+#     cout_total_production = prix_total_depense + prix_total_sortie
+#     # quantite_produite = int(list(Production.objects.filter(production_id = id_production).values('quantite_produite'))[0]['quantite_produite'])
+#     quantite = float(list(Production.objects.filter(pk= id_production).values('Prix_total_depense'))[0]['Prix_total_depense'])
+#     quotient = cout_total_production / quantite
     
 #     return render(
 #         request,

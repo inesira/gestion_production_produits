@@ -27,8 +27,13 @@ class Depense(models.Model):
     Prix_total_depense = models.FloatField(null=True, blank=True)
     production = models.ForeignKey(Production, on_delete=models.CASCADE)
     date_depense = models.DateField(null=True, blank=True)
+<<<<<<< HEAD
     date_production = models.DateField(null=True, blank=True)
     utilisateur = models.CharField(max_length=45, null=True, blank=True)    
+>>>>>>> feature/data_modeling_update
+=======
+    # date_production = models.DateField(null=True, blank=True)
+    # utilisateur = models.CharField(max_length=45, null=True, blank=True)    
 >>>>>>> feature/data_modeling_update
      
     

@@ -150,13 +150,22 @@ urlpatterns = [
     path('cout/getDepense', views.couts.getDepense, name='cout_getDepense'),
     path('cout/getCoutDepense', views.couts.getCoutDepense, name='cout_getCoutDepense'),
     path('cout/getCoutSortie', views.couts.getCoutSortie, name='cout_getCoutSortie'),
-    # path('cout/getCoutProduction', views.couts.getCoutProduction, name='cout_getCoutProduction'),
+    #path('cout/getCoutProduction', views.couts.getCoutProduction, name='cout_getCoutProduction'),
+    
+    
+    # path('calcul/', views.calculs.index , name='calcul'),
+    # path('calcul/create', views.calculs.create, name='calcul_create'),
+    # path('calcul/store', views.calculs.store, name='calcul_store'),
+    # path('calcul/edit/<int:id>', views.calculs.edit, name='calcul_edit'),
+    # path('calcul/update/<int:id>', views.calculs.update, name='calcul_update'),
+    # path('calcul/delete/<int:id>', views.calculs.delete, name='calcul_delete'),
+    # path('calcul/getQuantite', views.calculs.getQuantite, name='calcul_getQuantite'),
+    # path('calcul/getTotal', views.calculs.getTotal, name='calcul_getTotal'),
     
     
 >>>>>>> feature/data_modeling_update
     
-    
-     path('user/<int:id>', views.users.index, name='user'),
+    path('user/<int:id>', views.users.index, name='user'),
     path('user_gest/<int:id>', views.users.index_gest, name='user_gest'),
     path('user_resp/<int:id>', views.users.index_resp, name='user_resp'),
     path('user/all', views.users.index_all, name='user_all'),
