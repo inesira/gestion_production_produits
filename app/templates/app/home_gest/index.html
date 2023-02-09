@@ -34,14 +34,14 @@
             <div class="col-xxl-4 col-md-4">
               <div class="card info-card revenue-card">
                 <div class="card-body">
-                  <h5 class="card-title">Stocks</h5>
+                  <h5 class="card-title">Matieres Premieres</h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                       <i class="bi bi-cart" aria-hidden="true"></i>
                     </div>
                     <div class="ps-3">
-                      <h6>{{count_stocks}} stock(s)</h6>
+                      <h6>{{count_stocks}} type(s)</h6>
                     </div>
                   </div>
                 </div>
@@ -81,22 +81,33 @@
               <tr>
                   <th scope="col">id</th>
                   <th scope="col">Matieres Premieres</th>
-                  <th scope="col">Quantite</th>
+                  <th scope="col">Quantite en stock</th>
+                  <th scope="col">Sortie en stock</th>
                   <th scope="col">Prix unitaire</th>
                   <th scope="col">Prix total</th>
-                  <th scope="col">Date d'entrees</th>
-                  
+                  {% comment %} <th scope="col">Date d'entree</th> {% endcomment %}
+                  <th scope="col">Date de sortie</th>
+                  <th scope="col">Production</th>
+                  {% comment %} <th scope="col">Date de la Production</th> {% endcomment %}
+                  {% comment %} <th scope="col">Utilisateur</th> {% endcomment %}
+                  {% comment %} <th scope="col" colspan="2">Option</th> {% endcomment %}
               </tr>
               </thead>
               <tbody>
-                  {% for situation_stock in Situation_stocks %}
+                  {% for output in Outputs %}
                   <tr>
-                      <th scope="row"><a href="#">{{situation_stock.id}}</a></th>
-                      <td>{{situation_stock.stocks}}</td>
-                      <td>{{situation_stock.quantite}}</td>
-                      <td>{{situation_stock.price}}</td>
-                      <td>{{situation_stock.total }}</td>
-                      <td>{{situation_stock.date}}</td>
+                      <th scope="row"><a href="#">{{output.id}}</a></th>
+                      <td>{{output.matiere_premiere}}</td>
+                      <td>{{output.quantite_stock}}</td>
+                      <td>{{output.quantite_sortie}}</td>
+                      <td>{{output.priX_unitaire_sortie}}</td>
+                      <td>{{output.prix_total_sortie }}</td>
+                      {% comment %} <td>{{output.date_entree }}</td>  {% endcomment %}
+                      <td>{{output.date_sortie}}</td>
+                      <td>{{output.production }}</td>
+                      {% comment %} <td>{{output.date_production }}</td> {% endcomment %}
+                      {% comment %} <td>{{output.utilisateur}}</td> {% endcomment %}
+                      
                   </tr>
                   {%  endfor %}
                   </tbody>

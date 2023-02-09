@@ -1,4 +1,4 @@
-{% extends 'app/layouts/defaults_gest.html' %}
+{% extends 'app/layouts/defaults.html' %}
 
 {% block content %}
 <main id="main" class="main">
@@ -27,10 +27,11 @@
                         <th scope="col">Sortie en stock</th>
                         <th scope="col">Prix unitaire</th>
                         <th scope="col">Prix total</th>
-                        {% comment %} <th scope="col">Production</th> {% endcomment %}
-                        <th scope="col">Date d'entree'</th>
+                        {% comment %} <th scope="col">Date d'entree</th> {% endcomment %}
                         <th scope="col">Date de sortie</th>
-                        <th scope="col">Utilisateur</th>
+                        <th scope="col">Production</th>
+                        {% comment %} <th scope="col">Date de la Production</th> {% endcomment %}
+                        {% comment %} <th scope="col">Utilisateur</th> {% endcomment %}
                         <th scope="col" colspan="2">Option</th>
                     </tr>
                     </thead>
@@ -43,10 +44,11 @@
                             <td>{{output.quantite_sortie}}</td>
                             <td>{{output.priX_unitaire_sortie}}</td>
                             <td>{{output.prix_total_sortie }}</td>
-                            {% comment %} <td>{{output.production }}</td> {% endcomment %}
-                            <td>{{output.date_entree}}</td>
+                            {% comment %} <td>{{output.date_entree }}</td>  {% endcomment %}
                             <td>{{output.date_sortie}}</td>
-                            <td>{{output.utilisateur}}</td>
+                            <td>{{output.production }}</td>
+                            {% comment %} <td>{{output.date_production }}</td> {% endcomment %}
+                            {% comment %} <td>{{output.utilisateur}}</td> {% endcomment %}
                             
                             <td>
                                 <a href="{% url 'output_edit' output.id %}" class="btn btn-primary"> Modifier </a>

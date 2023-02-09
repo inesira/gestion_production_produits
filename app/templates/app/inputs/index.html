@@ -1,4 +1,4 @@
-{% extends 'app/layouts/defaults_gest.html' %}
+{% extends 'app/layouts/defaults.html' %}
 
 {% block content %}
 <main id="main" class="main">
@@ -27,7 +27,7 @@
                         <th scope="col">Unite d'entree</th>
                         <th scope="col">Prix unitaire</th>
                         <th scope="col">Date d'entree</th>
-                        <th scope="col">Utilisateur</th>
+                        {% comment %} <th scope="col">Utilisateur</th> {% endcomment %}
                         <th scope="col" colspan="2">Option</th>
                     </tr>
                     </thead>
@@ -40,7 +40,7 @@
                             <td>{{input.unite_entree}}</td>
                             <td>{{input.prix_unitaire_entree }}</td>
                             <td>{{input.date_entree}}</td>
-                            <td>{{input.utilisateur}}</td>
+                            {% comment %} <td>{{input.utilisateur}}</td> {% endcomment %}
                             <td>
                                 <a href="{% url 'input_edit' input.id %}" class="btn btn-primary"> Modifier </a>
                             </td>

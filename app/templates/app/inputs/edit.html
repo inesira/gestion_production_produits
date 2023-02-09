@@ -1,4 +1,4 @@
-{% extends 'app/layouts/defaults_gest.html' %}
+{% extends 'app/layouts/defaults.html' %}
 {% block content %}
 {% load crispy_forms_tags %}
 <main id="main" class="main">
@@ -24,9 +24,9 @@
                     <div class="form-group">
                         {{ form.date_entree|as_crispy_field }}
                     </div>
-                    <div class="form-group">
+                    {% comment %} <div class="form-group">
                         {{ form.utilisateur |as_crispy_field }}
-                    </div>
+                    </div> {% endcomment %}
                     <div class="text-center">
                         <button type="submit" class="btn btn-primary">Enregistrer</button>
                         <button type="reset" class="btn btn-secondary">reset</button>

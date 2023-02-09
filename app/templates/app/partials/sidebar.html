@@ -21,20 +21,20 @@
         </li>
         
         <li>
-          <a href="{% url 'input_admin'%}">
+          <a href="{% url 'input'%}">
             <i class="bi bi-circle"></i><span>Entrees</span>
           </a>
         </li>
         <li>
-          <a href="{% url 'output_admin'%}">
+          <a href="{% url 'output'%}">
             <i class="bi bi-circle"></i><span>Sorties</span>
           </a>
         </li>
-        <li>
+        {% comment %} <li>
           <a href="{% url 'situation_stock_admin'%}">
             <i class="bi bi-circle"></i><span>Situation du Stock</span>
           </a>
-        </li>
+        </li> {% endcomment %}
         
         </li>
       </ul>
@@ -79,9 +79,9 @@
       </a>
     </li><!-- End F.A.Q Page Nav -->
     <li class="nav-item">
-      <a class="nav-link collapsed" href="{% url 'cout_production'%}">
+      <a class="nav-link collapsed" href="{% url 'cout'%}">
         <i class="bi bi-question-circle"></i>
-        <span>Cout de Production</span>
+        <span>Couts</span>
       </a>
     </li>
     <li class="nav-item">
