@@ -34,14 +34,22 @@
             <div class="col-xxl-4 col-md-4">
               <div class="card info-card revenue-card">
                 <div class="card-body">
+<<<<<<< HEAD
                   <h5 class="card-title">Stocks</h5>
+=======
+                  <h5 class="card-title">Matieres premieres</h5>
+>>>>>>> feature/data_modeling_update
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                       <i class="bi bi-cart" aria-hidden="true"></i>
                     </div>
                     <div class="ps-3">
+<<<<<<< HEAD
                       <h6>{{count_stocks}} stock(s)</h6>
+=======
+                      <h6>{{count_stocks}} type(s)</h6>
+>>>>>>> feature/data_modeling_update
                     </div>
                   </div>
                 </div>
@@ -72,7 +80,11 @@
     </section>
     <div class="card">
       <div class="card-body">
+<<<<<<< HEAD
           <h5 class="card-title">Situation du Stock</h5>
+=======
+          <h5 class="card-title">la liste des matieres premieres sorties</h5>
+>>>>>>> feature/data_modeling_update
   
           <!-- Table with stripped rows -->
           <div class="card-body">
@@ -81,6 +93,7 @@
               <tr>
                   <th scope="col">id</th>
                   <th scope="col">Matieres Premieres</th>
+<<<<<<< HEAD
                   <th scope="col">Quantite</th>
                   <th scope="col">Prix unitaire</th>
                   <th scope="col">Prix total</th>
@@ -97,6 +110,35 @@
                       <td>{{situation_stock.price}}</td>
                       <td>{{situation_stock.total }}</td>
                       <td>{{situation_stock.date}}</td>
+=======
+                  <th scope="col">Quantite en stock</th>
+                  <th scope="col">Sortie en stock</th>
+                  <th scope="col">Prix unitaire</th>
+                  <th scope="col">Prix total</th>
+                  {% comment %} <th scope="col">Date d'entree</th> {% endcomment %}
+                  <th scope="col">Date de sortie</th>
+                  <th scope="col">Production</th>
+                  {% comment %} <th scope="col">Date de la Production</th> {% endcomment %}
+                  {% comment %} <th scope="col">Utilisateur</th> {% endcomment %}
+                  {% comment %} <th scope="col" colspan="2">Option</th> {% endcomment %}
+              </tr>
+              </thead>
+              <tbody>
+                  {% for output in Outputs %}
+                  <tr>
+                      <th scope="row"><a href="#">{{output.id}}</a></th>
+                      <td>{{output.matiere_premiere}}</td>
+                      <td>{{output.quantite_stock}}</td>
+                      <td>{{output.quantite_sortie}}</td>
+                      <td>{{output.priX_unitaire_sortie}}</td>
+                      <td>{{output.prix_total_sortie }}</td>
+                      {% comment %} <td>{{output.date_entree }}</td>  {% endcomment %}
+                      <td>{{output.date_sortie}}</td>
+                      <td>{{output.production }}</td>
+                      {% comment %} <td>{{output.date_production }}</td> {% endcomment %}
+                      {% comment %} <td>{{output.utilisateur}}</td> {% endcomment %}
+                  
+>>>>>>> feature/data_modeling_update
                   </tr>
                   {%  endfor %}
                   </tbody>
@@ -141,7 +183,11 @@
                     <i class="bi bi-cart" aria-hidden="true"></i>
                   </div>
                   <div class="ps-3">
+<<<<<<< HEAD
                     <h6>{{count_product}} stock(s)</h6>
+=======
+                    <h6>{{count_product}} type(s)</h6>
+>>>>>>> feature/data_modeling_update
                   </div>
                 </div>
               </div>
@@ -181,6 +227,7 @@
               <thead>
               <tr>
                   <th scope="col">id</th>
+<<<<<<< HEAD
                   <th scope="col">Produits Finis</th>
                   <th scope="col">Quantite</th>
                   <th scope="col">Unite de Production</th>
@@ -205,6 +252,32 @@
                       <td>{{cout_production.cout_de_production}}</td>
                       <td>{{cout_production.date}}</td>
                       <td>
+=======
+                  <th scope="col">Production</th>
+                  <th scope="col">quantite produite</th>
+                  {% comment %} <th scope="col">MP sorties</th> {% endcomment %}
+                  <th scope="col">cout de la sortie total</th>
+                  {% comment %} <th scope="col">Type de depenses</th> {% endcomment %}
+                  <th scope="col">Cout de depenses total</th>
+                  <th scope="col">Cout de production total</th>
+                  <th scope="col">Cout de production unitaire</th>
+                  {% comment %} <th scope="col" colspan="2">Option</th> {% endcomment %}
+              </tr>
+              </thead>
+              <tbody>
+                  {% for cout in Couts %}
+                  <tr>
+                      <th scope="row"><a href="#">{{cout.id}}</a></th>
+                      <td>{{cout.production}}</td>
+                      <td>{{cout.quantite_produite}}</td>
+                      {% comment %} <td>{{cout.stock_mp}}</td> {% endcomment %}
+                      <td>{{cout.cout_total_sortie}}</td>
+                      {% comment %} <td>{{cout.nombre_depense}}</td> {% endcomment %}
+                      <td>{{cout.cout_total_depense }}</td>
+                      <td>{{cout.cout_total_production }}</td>
+                      <td>{{cout.cout_production }}</td>
+
+>>>>>>> feature/data_modeling_update
                   </tr>
                   {%  endfor %}
                   </tbody>

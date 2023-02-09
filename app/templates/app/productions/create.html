@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 {% extends 'app/layouts/defaults_resp.html' %}
+=======
+{% extends 'app/layouts/defaults.html' %}
+>>>>>>> feature/data_modeling_update
 {% block content %}
 {% load crispy_forms_tags %}
 <main id="main" class="main">
@@ -10,14 +14,32 @@
                 <form class="row g-3" action="{% url 'pro_store'%}" method="POST">
                     {% csrf_token %}
                     <div class="form-group">
+<<<<<<< HEAD
                         {{ form.nom_prod|as_crispy_field }}
+=======
+                        {{ form.produit_fini|as_crispy_field }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.quantite_produite|as_crispy_field }}
+>>>>>>> feature/data_modeling_update
                     </div>
                     <div class="form-group">
                         {{ form.unite_production|as_crispy_field }}
                     </div>
                     <div class="form-group">
+<<<<<<< HEAD
                         {{ form.date|as_crispy_field }}
                     </div>
+=======
+                        {{ form.date_production|as_crispy_field }}
+                    </div>
+                    {% comment %} <div class="form-group">
+                        {{ form.utilisateur|as_crispy_field }}
+                    </div> {% endcomment %}
+                    {% comment %} <div class="form-group">
+                        {{ form.cout_production|as_crispy_field }}
+                    </div> {% endcomment %}
+>>>>>>> feature/data_modeling_update
                     <div class="text-center">
                         <button type="submit" class="btn btn-primary">Enregistrer</button>
                         <button type="reset" class="btn btn-secondary">reset</button>

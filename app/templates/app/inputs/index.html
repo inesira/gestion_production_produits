@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 {% extends 'app/layouts/defaults_gest.html' %}
+=======
+{% extends 'app/layouts/defaults.html' %}
+>>>>>>> feature/data_modeling_update
 
 {% block content %}
 <main id="main" class="main">
@@ -23,10 +27,18 @@
                     <tr>
                         <th scope="col">id</th>
                         <th scope="col">Matieres Premieres</th>
+<<<<<<< HEAD
                         <th scope="col">Quantite</th>
                         <th scope="col">prix unitaire</th>
                         <th scope="col">prix total</th>
                         <th scope="col">Date d'entrees</th>
+=======
+                        <th scope="col">Quantite des Entrees</th>
+                        <th scope="col">Unite d'entree</th>
+                        <th scope="col">Prix unitaire</th>
+                        <th scope="col">Date d'entree</th>
+                        {% comment %} <th scope="col">Utilisateur</th> {% endcomment %}
+>>>>>>> feature/data_modeling_update
                         <th scope="col" colspan="2">Option</th>
                     </tr>
                     </thead>
@@ -34,11 +46,20 @@
                         {% for input in Inputs %}
                         <tr>
                             <th scope="row"><a href="#">{{input.id}}</a></th>
+<<<<<<< HEAD
                             <td>{{input.stock}}</td>
                             <td>{{input.quantite}}</td>
                             <td>{{input.price}}</td>
                             <td>{{input.total }}</td>
                             <td>{{input.date}}</td>
+=======
+                            <td>{{input.matiere_Premiere}}</td>
+                            <td>{{input.quantite_entree}}</td>
+                            <td>{{input.unite_entree}}</td>
+                            <td>{{input.prix_unitaire_entree }}</td>
+                            <td>{{input.date_entree}}</td>
+                            {% comment %} <td>{{input.utilisateur}}</td> {% endcomment %}
+>>>>>>> feature/data_modeling_update
                             <td>
                                 <a href="{% url 'input_edit' input.id %}" class="btn btn-primary"> Modifier </a>
                             </td>

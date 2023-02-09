@@ -1,14 +1,23 @@
 from django.shortcuts import redirect,render
 from django.http import HttpRequest
+<<<<<<< HEAD
 from app.models import Depense,Production,Output,Mains_d_oeuvres
 from app.forms import DepenseForm,ProductionForm
+=======
+from app.models import Depense,Category,Production
+from app.forms import DepenseForm,CategoryForm
+>>>>>>> feature/data_modeling_update
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required,user_passes_test
 
 # Create your views here.
 @login_required( login_url="/login")
 @user_passes_test(lambda user: user.is_staff ,login_url="/error/gest")
+<<<<<<< HEAD
 @user_passes_test(lambda user: not(user.is_superuser) ,login_url="/error/admin")
+=======
+@user_passes_test(lambda user: user.is_superuser ,login_url="/error/resp")
+>>>>>>> feature/data_modeling_update
 
 
 def index(request):
@@ -23,14 +32,22 @@ def index(request):
     )
 
 def create(request):
+<<<<<<< HEAD
     Productions = Production.objects.all()
+=======
+    Categories = Category.objects.all()
+>>>>>>> feature/data_modeling_update
     form = DepenseForm()
     return render(
         request,
         'app/depenses/create.html',
         {
             'form': form,
+<<<<<<< HEAD
             'Productions':Productions,
+=======
+            'Categories':Categories,
+>>>>>>> feature/data_modeling_update
         }
     )
 
@@ -44,7 +61,11 @@ def store(request):
 
 def edit(request, id):
     assert isinstance(request, HttpRequest)
+<<<<<<< HEAD
     Productions = Production.objects.all()
+=======
+    Categories = Category.objects.all()
+>>>>>>> feature/data_modeling_update
     if request.method == "GET":
         if id == 0:
             form = DepenseForm()
@@ -56,7 +77,11 @@ def edit(request, id):
             'app/depenses/edit.html',
             {
                 'form': form,
+<<<<<<< HEAD
                 'Productions':Productions,
+=======
+                'Categories':Categories,
+>>>>>>> feature/data_modeling_update
             }
             )
 
@@ -77,6 +102,7 @@ def delete(request, id):
     messages.success(request," Suppression des depenses avec succes ")
     return redirect('/depense')
     
+<<<<<<< HEAD
 def getCategories(request):
     id_production = request.GET.get('id_production')
     mains_d_oeuvres = Mains_d_oeuvres.objects.filter(production_id = id_production).count()
@@ -123,12 +149,18 @@ def getStocks(request):
 def getDate(request):
     id_production = request.GET.get('id_production')
     production = Production.objects.get(pk = id_production)
+=======
+def getDate(request):
+    id_production= request.GET.get('id_production')
+    production= Production.objects.get(pk = id_production)
+>>>>>>> feature/data_modeling_update
     return render(
         request,
         'app/depenses/getDate.html',
         {
             'production': production
         }
+<<<<<<< HEAD
     )         
    
 def getTotal_sorties(request):
@@ -156,3 +188,8 @@ def getTotal_sorties(request):
 
 
     
+=======
+    ) 
+    
+       
+>>>>>>> feature/data_modeling_update

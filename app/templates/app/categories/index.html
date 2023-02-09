@@ -23,7 +23,10 @@
                     <tr>
                         <th scope="col">id</th>
                         <th scope="col">Categorie</th>
+<<<<<<< HEAD
                         <th scope="col">Revenu</th>
+=======
+>>>>>>> feature/data_modeling_update
                         <th scope="col" colspan="2">Option</th>
                     </tr>
                     </thead>
@@ -31,8 +34,12 @@
                         {% for category in Categories %}
                         <tr>
                             <td>{{category.id}}</td>
+<<<<<<< HEAD
                             <td>{{ category.nom_categorie}}</td>
                             <td>{{ category.revenu}}</td>
+=======
+                            <td>{{ category.type_depense}}</td>
+>>>>>>> feature/data_modeling_update
                             <td>
                                 <a href="{% url 'categorie_edit' category.id %}" class="btn btn-primary"> Modifier </a>
                             </td>

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 {% extends 'app/layouts/defaults_resp.html' %}
+=======
+{% extends 'app/layouts/defaults.html' %}
+>>>>>>> feature/data_modeling_update
 
 {% block content %}
 <main id="main" class="main">
@@ -23,9 +27,12 @@
                     <tr>
                         <th scope="col">id</th>
                         <th scope="col">Produits Finis</th>
+<<<<<<< HEAD
                         <th scope="col">Quantite Produite</th>
                         <th scope="col">Unite de Production</th>
                         <th scope="col">date de Production</th>
+=======
+>>>>>>> feature/data_modeling_update
                         <th scope="col" colspan="2">Option</th>
                     </tr>
                     </thead>
@@ -33,10 +40,14 @@
                         {% for product in Products %}
                         <tr>
                             <td>{{product.id}}</td>
+<<<<<<< HEAD
                             <td>{{ product.produit}}</td>
                             <td>{{ product.quantite}}</td>
                             <td>{{ product.unite_production}}</td>
                             <td>{{ product.date}}</td>
+=======
+                            <td>{{ product.type_produit}}</td>
+>>>>>>> feature/data_modeling_update
                             <td>
                                 <a href="{% url 'prod_edit' product.id %}" class="btn btn-primary"> Modifier </a>
                             </td>

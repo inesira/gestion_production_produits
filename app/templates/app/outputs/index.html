@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 {% extends 'app/layouts/defaults_gest.html' %}
+=======
+{% extends 'app/layouts/defaults.html' %}
+>>>>>>> feature/data_modeling_update
 
 {% block content %}
 <main id="main" class="main">
@@ -23,11 +27,23 @@
                     <tr>
                         <th scope="col">id</th>
                         <th scope="col">Matieres Premieres</th>
+<<<<<<< HEAD
                         <th scope="col">Quantite</th>
                         <th scope="col">Prix unitaire</th>
                         <th scope="col">Prix total</th>
                         <th scope="col">Production</th>
                         <th scope="col">Date de sorties</th>
+=======
+                        <th scope="col">Quantite en stock</th>
+                        <th scope="col">Sortie en stock</th>
+                        <th scope="col">Prix unitaire</th>
+                        <th scope="col">Prix total</th>
+                        {% comment %} <th scope="col">Date d'entree</th> {% endcomment %}
+                        <th scope="col">Date de sortie</th>
+                        <th scope="col">Production</th>
+                        {% comment %} <th scope="col">Date de la Production</th> {% endcomment %}
+                        {% comment %} <th scope="col">Utilisateur</th> {% endcomment %}
+>>>>>>> feature/data_modeling_update
                         <th scope="col" colspan="2">Option</th>
                     </tr>
                     </thead>
@@ -35,12 +51,25 @@
                         {% for output in Outputs %}
                         <tr>
                             <th scope="row"><a href="#">{{output.id}}</a></th>
+<<<<<<< HEAD
                             <td>{{output.stock_id}}</td>
                             <td>{{output.quantite}}</td>
                             <td>{{output.price}}</td>
                             <td>{{output.total }}</td>
                             <td>{{output.production }}</td>
                             <td>{{output.date}}</td>
+=======
+                            <td>{{output.matiere_premiere}}</td>
+                            <td>{{output.quantite_stock}}</td>
+                            <td>{{output.quantite_sortie}}</td>
+                            <td>{{output.priX_unitaire_sortie}}</td>
+                            <td>{{output.prix_total_sortie }}</td>
+                            {% comment %} <td>{{output.date_entree }}</td>  {% endcomment %}
+                            <td>{{output.date_sortie}}</td>
+                            <td>{{output.production }}</td>
+                            {% comment %} <td>{{output.date_production }}</td> {% endcomment %}
+                            {% comment %} <td>{{output.utilisateur}}</td> {% endcomment %}
+>>>>>>> feature/data_modeling_update
                             
                             <td>
                                 <a href="{% url 'output_edit' output.id %}" class="btn btn-primary"> Modifier </a>
@@ -48,7 +77,11 @@
                             <td>    
                                 <form action="{% url 'output_delete' output.id %}" method="POST">
                                     {%csrf_token%}
+<<<<<<< HEAD
                                     <button type="submit" onclick="return confirm('Voulez-vous supprimer cette facture?')" class="btn btn-danger"> Supprimer</Button>
+=======
+                                    <button type="submit" onclick="return confirm('Voulez-vous supprimer cette sortie?')" class="btn btn-danger"> Supprimer</Button>
+>>>>>>> feature/data_modeling_update
                                 </form>
                             </td>
                         </tr>

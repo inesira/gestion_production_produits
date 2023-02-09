@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 {% extends 'app/layouts/defaults_gest.html' %}
+=======
+{% extends 'app/layouts/defaults.html' %}
+>>>>>>> feature/data_modeling_update
 {% block content %}
 {% load crispy_forms_tags %}
 <main id="main" class="main">
@@ -10,6 +14,7 @@
                 <form class="row g-3" action="{% url 'input_store'%}" method="POST">
                     {% csrf_token %}
                     <div class="form-group">
+<<<<<<< HEAD
                         {{ form.stock|as_crispy_field }}
                     </div>
                     <div class="form-group">
@@ -24,6 +29,25 @@
                     <div class="form-group">
                         {{ form.date|as_crispy_field }}
                     </div>
+=======
+                        {{ form.matiere_Premiere|as_crispy_field }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.quantite_entree|as_crispy_field }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.unite_entree|as_crispy_field }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.prix_unitaire_entree |as_crispy_field }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.date_entree|as_crispy_field }}
+                    </div>
+                    {% comment %} <div class="form-group">
+                        {{ form.utilisateur|as_crispy_field }}
+                    </div> {% endcomment %}
+>>>>>>> feature/data_modeling_update
                     <div class="text-center">
                         <button type="submit" class="btn btn-primary">Enregistrer</button>
                         <button type="reset" class="btn btn-secondary">reset</button>

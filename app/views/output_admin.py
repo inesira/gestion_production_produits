@@ -1,7 +1,12 @@
 from django.shortcuts import redirect,render
 from django.http import HttpRequest
+<<<<<<< HEAD
 from app.models import Output,Stock
 from app.forms import OutputForm,StockForm
+=======
+from app.models import Output
+from app.forms import OutputForm
+>>>>>>> feature/data_modeling_update
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required,user_passes_test
 

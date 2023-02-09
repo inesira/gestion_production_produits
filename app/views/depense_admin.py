@@ -1,6 +1,10 @@
 from django.shortcuts import redirect,render
 from django.http import HttpRequest
+<<<<<<< HEAD
 from app.models import Depense,Production,Output,Mains_d_oeuvres
+=======
+from app.models import Depense,Production,Output
+>>>>>>> feature/data_modeling_update
 from app.forms import DepenseForm,ProductionForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required,user_passes_test
