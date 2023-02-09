@@ -20,9 +20,6 @@ def index(request):
             'Products': Products
         }
     )
-@login_required( login_url="/login")
-@user_passes_test(lambda user: user.is_staff ,login_url="/error/gest")
-@user_passes_test(lambda user: not(user.is_superuser) ,login_url="/error/admin")    
 
 def create(request):
     form = ProductForm()
@@ -33,9 +30,6 @@ def create(request):
             'form': form
         }
     )
-@login_required( login_url="/login")
-@user_passes_test(lambda user: user.is_staff ,login_url="/error/gest")
-@user_passes_test(lambda user: not(user.is_superuser) ,login_url="/error/admin")    
 
 def store(request):
     if request.method == 'POST':
@@ -44,9 +38,7 @@ def store(request):
             form.save()
             messages.success(request," Insertion d'un produit fini avec succes ")
         return redirect('/product')
-@login_required( login_url="/login")
-@user_passes_test(lambda user: user.is_staff ,login_url="/error/gest")
-@user_passes_test(lambda user: not(user.is_superuser) ,login_url="/error/admin")    
+    
 
 def edit(request, id):
     assert isinstance(request, HttpRequest)
@@ -73,9 +65,7 @@ def edit(request, id):
             form.save()
             messages.success(request," Modification du Produit fini avec succes ")
         return redirect('/product')
-@login_required( login_url="/login")
-@user_passes_test(lambda user: user.is_staff ,login_url="/error/gest")
-@user_passes_test(lambda user: not(user.is_superuser) ,login_url="/error/admin")    
+    
 def delete(request, id):
     Products = Product.objects.get(pk=id)
     Products.delete()

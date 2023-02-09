@@ -7,9 +7,10 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required,user_passes_test
 
 # Create your views here.
-@login_required( login_url="/")
-@user_passes_test(lambda user: not(user.is_superuser) ,login_url="/error/admin")
-@user_passes_test(lambda user: not(user.is_staff) ,login_url="/error/resp")
+@login_required( login_url="/login")
+@user_passes_test(lambda user: user.is_staff ,login_url="/error/resp")
+@user_passes_test(lambda user: user.is_superuser ,login_url="/error/gest")
+
 
 def index(request):
     assert isinstance(request, HttpRequest)
@@ -38,7 +39,13 @@ def store(request):
     if request.method == 'POST':
         form = OutputForm(request.POST)
         if form.is_valid():
-            form.save()
+            sortie = int(form['quantite_sortie'].value())
+            stocke = float(form['quantite_stock'].value())
+            form.save() 
+            outputs = Output.objects.all().last()
+            sto = stocke - sortie
+            outputs.quantite_stock = sto
+            outputs.save()
             messages.success(request," Sortie des Matieres Premieres avec succes ")
         return redirect('/output')
 
@@ -79,12 +86,22 @@ def delete(request, id):
 
 def getSorties(request):
     id_matiere_premiere = request.GET.get('id_matiere_premiere')
-    input = Input.objects.get(pk = id_matiere_premiere)
+    inputs = Input.objects.filter(pk = id_matiere_premiere).values('quantite_entree')
+    outputs = Output.objects.filter(matiere_premiere_id = id_matiere_premiere).values('quantite_sortie')
+    somme =0
+    for i in range(0,len(inputs)):
+        somme = somme + list(inputs[i].values())[0]
+    
+    somme_sortie =0  
+    for i in range(0,len(outputs)):
+        somme_sortie = somme_sortie + list(outputs[i].values())[0]
+        
+    reste = somme - somme_sortie
     return render(
         request,
         'app/outputs/getSorties.html',
         {
-            'input': input
+            'reste': reste
         }
     )
     
@@ -98,14 +115,24 @@ def getPrice(request):
             'input': input
         }
     ) 
-    
-def getUser(request):
-    
-    user = User.objects.get(pk = id)
+def getDate(request):
+    id_matiere_premiere= request.GET.get('id_matiere_premiere')
+    input = Input.objects.get(pk = id_matiere_premiere)
     return render(
         request,
-        'app/outputs/getUser.html',
+        'app/outputs/getDate_entree.html',
         {
-            'user': user
+            'input': input
+        }
+    )    
+    
+def getUnite(request):
+    id_matiere_premiere= request.GET.get('id_matiere_premiere')
+    input = Input.objects.get(pk = id_matiere_premiere)
+    return render(
+        request,
+        'app/outputs/getUnite.html',
+        {
+            'input': input
         }
     )       

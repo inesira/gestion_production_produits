@@ -1,6 +1,6 @@
 from django.shortcuts import redirect,render
 from django.http import HttpRequest
-from app.models import Depense,Production,Output,Mains_d_oeuvres
+from app.models import Depense,Production,Output
 from app.forms import DepenseForm,ProductionForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required,user_passes_test

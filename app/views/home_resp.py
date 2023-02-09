@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpRequest
 from django.contrib.auth.decorators import login_required,user_passes_test
-from app.models import Production,Product,Depense,Cout_production
+from app.models import Production,Product,Depense,Cout
 
 # Create your views here.
 @login_required( login_url="/login")
@@ -13,7 +13,7 @@ def index(request):
     count_production = Production.objects.all().count()
     count_product = Product.objects.all().count()
     count_depenses = Depense.objects.all().count()
-    Cout_productions = Cout_production.objects.all().order_by()
+    Couts = Cout.objects.all().order_by()
   
     
     
@@ -24,7 +24,7 @@ def index(request):
             'count_production': count_production,
             'count_product': count_product,
             'count_depenses': count_depenses,
-            'Cout_productions': Cout_productions,
+            'Couts': Couts,
            
             
         }

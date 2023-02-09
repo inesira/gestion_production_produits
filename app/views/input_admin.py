@@ -1,7 +1,7 @@
 from django.shortcuts import redirect,render
 from django.http import HttpRequest
-from app.models import Input,Stock
-from app.forms import InputForm,StockForm
+from app.models import Input
+from app.forms import InputForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required,user_passes_test
 
