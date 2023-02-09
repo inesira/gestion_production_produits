@@ -1,4 +1,4 @@
-{% extends 'app/layouts/defaults_resp.html' %}
+{% extends 'app/layouts/defaults.html' %}
 {% block content %}
 {% load crispy_forms_tags %}
 <main id="main" class="main">
@@ -10,26 +10,29 @@
                 <form class="row g-3" action="{% url 'dep_store'%}" method="POST">
                     {% csrf_token %}
                     <div class="form-group">
-                        {{ form.type_depense|as_crispy_field }}
+                        {{ form.categorie_depense|as_crispy_field }}
                     </div>
                     <div class="form-group">
+                        {{ form.quantite_depense|as_crispy_field }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.prix_unitaire_depense|as_crispy_field }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.Prix_total_depense|as_crispy_field }}
+                    </div>
+                     <div class="form-group">
                         {{ form.production|as_crispy_field }}
+                    
+                    <div class="form-group">
+                        {{ form.date_depense|as_crispy_field }}
+                    </div>
+                    {% comment %} <div class="form-group">
+                        {{ form.date_production|as_crispy_field }}
                     </div>
                     <div class="form-group">
-                        {{ form.stocks|as_crispy_field }}
-                    </div>
-                    <div class="form-group">
-                        {{ form.cout_total_sorties|as_crispy_field }}
-                    </div>
-                    <div class="form-group">
-                        {{ form.categories|as_crispy_field }}
-                    </div>
-                    <div class="form-group">
-                        {{ form.cout_total_m |as_crispy_field }}
-                    </div>
-                    <div class="form-group">
-                        {{ form.date|as_crispy_field }}
-                    </div>
+                        {{ form.utilisateur|as_crispy_field }}
+                    </div> {% endcomment %}
                     <div class="text-center">
                         <button type="submit" class="btn btn-primary">Enregistrer</button>
                         <button type="reset" class="btn btn-secondary">reset</button>
