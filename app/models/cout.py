@@ -15,4 +15,5 @@ class Cout(models.Model):
     quantite_total = models.FloatField(null=True, blank=True)
     cout_production = models.FloatField(null=True, blank=True)
                 
-     
+    # def __str__(self):
+    #     return self.production.produit_fini.type_produit
