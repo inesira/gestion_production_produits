@@ -7,13 +7,9 @@ from django.contrib.auth.decorators import login_required,user_passes_test
 
 # Create your views here.
 @login_required( login_url="/login")
-<<<<<<< HEAD
-@user_passes_test(lambda user: user.is_staff ,login_url="/error/gest")
-@user_passes_test(lambda user: not(user.is_superuser) ,login_url="/error/admin")
-=======
 @user_passes_test(lambda user: user.is_staff ,login_url="/error/resp")
 @user_passes_test(lambda user: user.is_superuser ,login_url="/error/gest")
->>>>>>> feature/data_modeling_update
+
 
 def index(request):
     assert isinstance(request, HttpRequest)
@@ -25,12 +21,8 @@ def index(request):
             'Products': Products
         }
     )
-<<<<<<< HEAD
-@login_required( login_url="/login")
-@user_passes_test(lambda user: user.is_staff ,login_url="/error/gest")
-@user_passes_test(lambda user: not(user.is_superuser) ,login_url="/error/admin")    
-=======
->>>>>>> feature/data_modeling_update
+
+
 
 def create(request):
     form = ProductForm()
@@ -41,12 +33,8 @@ def create(request):
             'form': form
         }
     )
-<<<<<<< HEAD
-@login_required( login_url="/login")
-@user_passes_test(lambda user: user.is_staff ,login_url="/error/gest")
-@user_passes_test(lambda user: not(user.is_superuser) ,login_url="/error/admin")    
-=======
->>>>>>> feature/data_modeling_update
+
+
 
 def store(request):
     if request.method == 'POST':
@@ -55,13 +43,7 @@ def store(request):
             form.save()
             messages.success(request," Insertion d'un produit fini avec succes ")
         return redirect('/product')
-<<<<<<< HEAD
-@login_required( login_url="/login")
-@user_passes_test(lambda user: user.is_staff ,login_url="/error/gest")
-@user_passes_test(lambda user: not(user.is_superuser) ,login_url="/error/admin")    
-=======
-    
->>>>>>> feature/data_modeling_update
+
 
 def edit(request, id):
     assert isinstance(request, HttpRequest)
@@ -88,13 +70,7 @@ def edit(request, id):
             form.save()
             messages.success(request," Modification du Produit fini avec succes ")
         return redirect('/product')
-<<<<<<< HEAD
-@login_required( login_url="/login")
-@user_passes_test(lambda user: user.is_staff ,login_url="/error/gest")
-@user_passes_test(lambda user: not(user.is_superuser) ,login_url="/error/admin")    
-=======
-    
->>>>>>> feature/data_modeling_update
+
 def delete(request, id):
     Products = Product.objects.get(pk=id)
     Products.delete()

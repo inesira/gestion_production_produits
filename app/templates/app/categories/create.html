@@ -10,17 +10,9 @@
                 <form class="row g-3" action="{% url 'categorie_store'%}" method="POST">
                     {% csrf_token %}
                     <div class="form-group">
-<<<<<<< HEAD
-                        {{ form.nom_categorie|as_crispy_field }}
-                    </div>
-                    <div class="form-group">
-                        {{ form.revenu|as_crispy_field }}
-                    </div>
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-primary">Enregistrer</button>
-=======
+
                         {{ form.type_depense|as_crispy_field }}
->>>>>>> feature/data_modeling_update
+
                     </div>
                 </form><!-- Vertical Form -->
             </div>

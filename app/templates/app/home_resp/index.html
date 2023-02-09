@@ -41,11 +41,7 @@
                       <i class="bi bi-cart" aria-hidden="true"></i>
                     </div>
                     <div class="ps-3">
-<<<<<<< HEAD
-                      <h6>{{count_product}} stock(s)</h6>
-=======
                       <h6>{{count_product}} type(s)</h6>
->>>>>>> feature/data_modeling_update
                     </div>
                   </div>
                 </div>
@@ -84,32 +80,6 @@
               <thead>
               <tr>
                   <th scope="col">id</th>
-<<<<<<< HEAD
-                  <th scope="col">Produits Finis</th>
-                  <th scope="col">Quantite</th>
-                  <th scope="col">Unite de Production</th>
-                  <th scope="col">Depenses</th>
-                  <th scope="col">Cout total de Production</th>
-                  <th scope="col">Quantite Total</th>
-                  <th scope="col">Cout Unitaire de Production</th>
-                  <th scope="col">Date de production</th>
-                  
-              </tr>
-              </thead>
-              <tbody>
-                  {% for cout_production in Cout_productions %}
-                  <tr>
-                      <th scope="row"><a href="#">{{cout_production.id}}</a></th>
-                      <td>{{cout_production.Product}}</td>
-                      <td>{{cout_production.quantite}}</td>
-                      <td>{{cout_production.unite}}</td>
-                      <td>{{cout_production.depense}}</td>
-                      <td>{{cout_production.cout_total_pro }}</td>
-                      <td>{{cout_production.quantite_total}}</td>
-                      <td>{{cout_production.cout_de_production}}</td>
-                      <td>{{cout_production.date}}</td>
-                      <td>
-=======
                   <th scope="col">Production</th>
                   <th scope="col">quantite produite</th>
                   {% comment %} <th scope="col">MP sorties</th> {% endcomment %}
@@ -133,7 +103,6 @@
                       <td>{{cout.cout_total_depense }}</td>
                       <td>{{cout.cout_total_production }}</td>
                       <td>{{cout.cout_production }}</td>
->>>>>>> feature/data_modeling_update
                   </tr>
                   {%  endfor %}
                   </tbody>

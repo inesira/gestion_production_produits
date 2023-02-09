@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-{% extends 'app/layouts/defaults_resp.html' %}
-=======
 {% extends 'app/layouts/defaults.html' %}
->>>>>>> feature/data_modeling_update
-
 {% block content %}
 <main id="main" class="main">
     <div class="card">
@@ -27,14 +22,6 @@
                     <tr>
                         <th scope="col">id</th>
                         <th scope="col">Depenses</th>
-<<<<<<< HEAD
-                        <th scope="col">Production</th>
-                        <th scope="col">Nombre de Stocks</th>
-                        <th scope="col">Cout total des Sorties</th>
-                        <th scope="col">Nombre de Categories M.O</th>
-                        <th scope="col">cout total de Mains d'oeuvres</th>
-                        <th scope="col">Date</th>
-=======
                         <th scope="col">quantite depensees</th>
                         <th scope="col">prix unitaire</th>
                         <th scope="col">prix total</th>
@@ -42,7 +29,7 @@
                         <th scope="col">date de la depense</th>
                         {% comment %} <th scope="col">date de la production</th>
                         <th scope="col">utilisateur</th> {% endcomment %}
->>>>>>> feature/data_modeling_update
+
                         <th scope="col" colspan="2">Option</th>
                     </tr>
                     </thead>
@@ -50,15 +37,6 @@
                         {% for depense in Depenses %}
                         <tr>
                             <th scope="row"><a href="#">{{depense.id}}</a></th>
-<<<<<<< HEAD
-                            <td>{{depense.type_depense}}</td>
-                            <td>{{depense.production}}</td>
-                            <td>{{depense.stocks}}</td>
-                            <td>{{depense.cout_total_sorties}}</td>
-                            <td>{{depense.categories}}</td>
-                            <td>{{depense.cout_total_m }}</td>
-                            <td>{{depense.date}}</td>
-=======
                             <td>{{depense.categorie_depense}}</td>
                             <td>{{depense.quantite_depense}}</td>
                             <td>{{depense.prix_unitaire_depense}}</td>
@@ -67,18 +45,13 @@
                             <td>{{depense.date_depense }}</td>
                             {% comment %} <td>{{depense.date_production }}</td>
                             <td>{{depense.utilisateur}}</td> {% endcomment %}
->>>>>>> feature/data_modeling_update
                             <td>
                                 <a href="{% url 'dep_edit' depense.id %}" class="btn btn-primary"> Modifier </a>
                             </td>
                             <td>    
                                 <form action="{% url 'dep_delete' depense.id %}" method="POST">
                                     {%csrf_token%}
-<<<<<<< HEAD
-                                    <button type="submit" onclick="return confirm('Voulez-vous supprimer cette facture?')" class="btn btn-danger"> Supprimer</Button>
-=======
                                     <button type="submit" onclick="return confirm('Voulez-vous supprimer cette depense?')" class="btn btn-danger"> Supprimer</Button>
->>>>>>> feature/data_modeling_update
                                 </form>
                             </td>
                         </tr>

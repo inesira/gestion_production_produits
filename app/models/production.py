@@ -1,15 +1,4 @@
 from django.db import models
-<<<<<<< HEAD
-
-class Production(models.Model):
-    
-    nom_prod = models.CharField(max_length=100)
-    unite_production = models.CharField(max_length=100)
-    date = models.DateField()
-    
-    def __str__(self):
-        return self.nom_prod
-=======
 from app.models import Product
 # from app.models import Cout
 
@@ -25,4 +14,3 @@ class Production(models.Model):
     
     def __str__(self):
         return self.produit_fini.type_produit
->>>>>>> feature/data_modeling_update

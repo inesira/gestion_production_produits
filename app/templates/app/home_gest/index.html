@@ -34,22 +34,13 @@
             <div class="col-xxl-4 col-md-4">
               <div class="card info-card revenue-card">
                 <div class="card-body">
-<<<<<<< HEAD
-                  <h5 class="card-title">Stocks</h5>
-=======
                   <h5 class="card-title">Matieres Premieres</h5>
->>>>>>> feature/data_modeling_update
-
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                       <i class="bi bi-cart" aria-hidden="true"></i>
                     </div>
                     <div class="ps-3">
-<<<<<<< HEAD
-                      <h6>{{count_stocks}} stock(s)</h6>
-=======
                       <h6>{{count_stocks}} type(s)</h6>
->>>>>>> feature/data_modeling_update
                     </div>
                   </div>
                 </div>
@@ -89,24 +80,7 @@
               <tr>
                   <th scope="col">id</th>
                   <th scope="col">Matieres Premieres</th>
-<<<<<<< HEAD
-                  <th scope="col">Quantite</th>
-                  <th scope="col">Prix unitaire</th>
-                  <th scope="col">Prix total</th>
-                  <th scope="col">Date d'entrees</th>
-                  
-              </tr>
-              </thead>
-              <tbody>
-                  {% for situation_stock in Situation_stocks %}
-                  <tr>
-                      <th scope="row"><a href="#">{{situation_stock.id}}</a></th>
-                      <td>{{situation_stock.stocks}}</td>
-                      <td>{{situation_stock.quantite}}</td>
-                      <td>{{situation_stock.price}}</td>
-                      <td>{{situation_stock.total }}</td>
-                      <td>{{situation_stock.date}}</td>
-=======
+
                   <th scope="col">Quantite en stock</th>
                   <th scope="col">Sortie en stock</th>
                   <th scope="col">Prix unitaire</th>
@@ -134,7 +108,6 @@
                       {% comment %} <td>{{output.date_production }}</td> {% endcomment %}
                       {% comment %} <td>{{output.utilisateur}}</td> {% endcomment %}
                       
->>>>>>> feature/data_modeling_update
                   </tr>
                   {%  endfor %}
                   </tbody>
