@@ -147,6 +147,7 @@ def getCoutDepense(request):
     cout_total_depense = 0
     for Prix_total_depense in cout:
         cout_total_depense = cout_total_depense + Prix_total_depense
+        
     return render(
         request,
         
@@ -154,14 +155,29 @@ def getCoutDepense(request):
         {
             'cout_total_depense': cout_total_depense
         }
-    )    
-
+    ) 
+    
 def getTotal(request):
     id_production = request.GET.get('id_production')
-    
-    prix_total_sortie = float(list(Output.objects.filter(production_id =id_production).values('prix_total_sortie'))[0]['prix_total_sortie'])
-    prix_total_depense = float(list(Depense.objects.filter(production_id = id_production).values('Prix_total_depense'))[0]['Prix_total_depense'])
-    cout_total_production = prix_total_depense + prix_total_sortie
+    depenses = Depense.objects.filter(production_id = id_production)
+    cout = []
+    for depense in depenses:
+        # car_ids.append(mains_d_oeuvres.id)
+        cout.append(depense.Prix_total_depense)
+    cout_total_depense = 0
+    for Prix_total_depense in cout:
+        cout_total_depense = cout_total_depense + Prix_total_depense
+        
+        
+    outputs = Output.objects.filter(production_id = id_production)
+    cout= []
+    for output in outputs:
+        # cout.append(output.id)
+        cout.append(output.prix_total_sortie)
+    cout_total_sortie = 0
+    for prix_total_sortie in cout:
+        cout_total_sortie = cout_total_sortie + prix_total_sortie    
+    cout_total_production =cout_total_depense + cout_total_sortie
     return render(
         request,
         'app/couts/getTotal.html',
@@ -170,7 +186,26 @@ def getTotal(request):
             
         }
     )
+        
     
+# def getTotal(request):
+#     id_production = request.GET.get('id_production')
+    
+    
+#     prix_total_sortie = float(list(Output.objects.filter(production_id =id_production).values('prix_total_sortie'))[0]['prix_total_sortie'])
+#     prix_total_depense = float(list(Depense.objects.filter(production_id = id_production).values('Prix_total_depense'))[0]['Prix_total_depense'])
+#     cout_total_production = cout_total_production + (prix_total_depense + prix_total_sortie)
+#     return render(
+#         request,
+#         'app/couts/getTotal.html',
+#         {
+#             'cout_total_production': cout_total_production
+            
+#         }
+#     )
+           
+
+
     
 # def getCoutProduction(request):
 #     id_production = request.GET.get('id_production')
